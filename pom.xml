@@ -57,8 +57,8 @@
 				<configuration>
 					<includes>
 					</includes>
-					<parallel>methods</parallel>
-					<threadCount>2</threadCount>
+					<parallel>classes</parallel>
+					<threadCount>3</threadCount>
 				</configuration>
 			</plugin>
 
@@ -84,6 +84,9 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			
+			
 		</plugins>
 	</build>
 
