@@ -35,6 +35,11 @@
 			<artifactId>serenity-screenplay-webdriver</artifactId>
 			<version>1.2.2-rc.4</version>
 		</dependency>
+		<dependency>
+			<groupId>org.easyb</groupId>
+			<artifactId>maven-easyb-plugin</artifactId>
+			<version>1.4</version>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -84,9 +89,9 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-			
-			
+
+
+
 		</plugins>
 	</build>
 
