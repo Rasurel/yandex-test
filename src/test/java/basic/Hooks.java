@@ -24,7 +24,7 @@ public class Hooks {
 //		capabilities.setPlatform(Platform.MAC);
 		
 //		driver = new RemoteWebDriver(new URL("http://10.252.47.15:5555/wd/hub"), capabilities);
-		driver = new RemoteWebDriver(new URL("http://10.252.47.15:4444/wd/hub"), capabilities);
+		driver = new RemoteWebDriver(new URL("http://10.252.47.15:5555/wd/hub"), capabilities);
 		
 		//driver = new ChromeDriver();
 	}
