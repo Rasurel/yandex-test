@@ -1,0 +1,66 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Open Yandex",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 19791423327,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "yandex is opened",
+            "match": {
+              "location": "YandexFirstIT.google_is_opened()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3088202186,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setup()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Enter anja",
+        "description": "",
+        "id": "yandex-second-test;enter-anja",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 185849938,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user enters anja",
+            "match": {
+              "location": "YandexSecontIT.user_enters_anja()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Yandex second test",
+    "description": "",
+    "id": "yandex-second-test",
+    "keyword": "Feature",
+    "uri": "/Users/anna/Documents/workspace/testio/src/test/resources/features/yandexsecond.feature"
+  }
+]

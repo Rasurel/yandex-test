@@ -1,0 +1,66 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Open Yandex",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 4969390018,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "yandex is opened",
+            "match": {
+              "location": "YandexFirstIT.google_is_opened()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2835155879,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setup()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Enter Ski",
+        "description": "",
+        "id": "yandex-first-test;enter-ski",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 186866681,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enters ski",
+            "match": {
+              "location": "YandexFirstIT.user_enters_ski()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Yandex first test",
+    "description": "",
+    "id": "yandex-first-test",
+    "keyword": "Feature",
+    "uri": "/Users/anna/Documents/workspace/testio/src/test/resources/features/yandexfirst.feature"
+  }
+]

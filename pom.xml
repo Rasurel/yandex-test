@@ -35,12 +35,6 @@
 			<artifactId>serenity-screenplay-webdriver</artifactId>
 			<version>1.2.2-rc.4</version>
 		</dependency>
-		<dependency>
-			<groupId>org.easyb</groupId>
-			<artifactId>maven-easyb-plugin</artifactId>
-			<version>1.4</version>
-		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -54,16 +48,17 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<!-- Run all tests during the integration test phase -->
+			
 			<plugin>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.18</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19</version>
 				<configuration>
+					<forkCount>5</forkCount>
+					<reuseForks>true</reuseForks>
 					<includes>
+						<include>**/*IT.class</include>
 					</includes>
-					<parallel>classes</parallel>
-					<threadCount>3</threadCount>
 				</configuration>
 			</plugin>
 
@@ -90,9 +85,90 @@
 				</executions>
 			</plugin>
 
-
+			<plugin>
+				<groupId>com.github.temyers</groupId>
+				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+				<version>2.1.0</version>
+				<executions>
+					<execution>
+						<id>generateRunners</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>generateRunners</goal>
+						</goals>
+						<configuration>
+							<!-- Mandatory -->
+							<!-- comma separated list of package names to scan for glue code -->
+							<glue>basic, tests</glue>
+							<!-- These are optional, with the default values -->
+							<!-- Where to output the generated tests -->
+							<outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
+							<!-- The directory, which must be in the root of the runtime classpath, 
+								containing your feature files. -->
+							<featuresDirectory>src/test/resources/features/</featuresDirectory>
+							<!-- Directory where the cucumber report files shall be written -->
+							<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+							<!-- comma separated list of output formats -->
+							<format>json</format>
+							<!-- CucumberOptions.strict property -->
+							<strict>true</strict>
+							<!-- CucumberOptions.monochrome property -->
+							<monochrome>true</monochrome>
+							<!-- The tags to run, maps to CucumberOptions.tags property -->
+							<tags></tags>
+							<!-- If set to true, only feature files containing the required tags 
+								shall be generated. -->
+							<filterFeaturesByTags>false</filterFeaturesByTags>
+							<!-- Generate TestNG runners instead of JUnit ones. -->
+							<useTestNG>false</useTestNG>
+							<!-- The naming scheme to use for the generated test classes. One 
+								of 'simple' or 'feature-title' -->
+							<namingScheme>simple</namingScheme>
+							<!-- One of [SCENARIO, FEATURE]. SCENARIO generates one runner per 
+								scenario. FEATURE generates a runner per feature. -->
+							<parallelScheme>SCENARIO</parallelScheme>
+							<packageName></packageName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.github.temyers
+										</groupId>
+										<artifactId>
+											cucumber-jvm-parallel-plugin
+										</artifactId>
+										<versionRange>
+											[2.1.0,)
+										</versionRange>
+										<goals>
+											<goal>generateRunners</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
-
 </project>
