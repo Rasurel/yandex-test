@@ -48,8 +48,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19</version>
@@ -60,7 +59,7 @@
 						<include>**/*IT.class</include>
 					</includes>
 				</configuration>
-			</plugin>
+			</plugin> -->
 
 			<!-- Generate the test reports after the integration tests -->
 			<plugin>
@@ -85,7 +84,7 @@
 				</executions>
 			</plugin>
 
-			<plugin>
+<!-- 			<plugin>
 				<groupId>com.github.temyers</groupId>
 				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
 				<version>2.1.0</version>
@@ -97,47 +96,47 @@
 							<goal>generateRunners</goal>
 						</goals>
 						<configuration>
-							<!-- Mandatory -->
-							<!-- comma separated list of package names to scan for glue code -->
+							Mandatory
+							comma separated list of package names to scan for glue code
 							<glue>basic, tests</glue>
-							<!-- These are optional, with the default values -->
-							<!-- Where to output the generated tests -->
+							These are optional, with the default values
+							Where to output the generated tests
 							<outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
-							<!-- The directory, which must be in the root of the runtime classpath, 
-								containing your feature files. -->
+							The directory, which must be in the root of the runtime classpath, 
+								containing your feature files.
 							<featuresDirectory>src/test/resources/features/</featuresDirectory>
-							<!-- Directory where the cucumber report files shall be written -->
+							Directory where the cucumber report files shall be written
 							<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-							<!-- comma separated list of output formats -->
+							comma separated list of output formats
 							<format>json</format>
-							<!-- CucumberOptions.strict property -->
+							CucumberOptions.strict property
 							<strict>true</strict>
-							<!-- CucumberOptions.monochrome property -->
+							CucumberOptions.monochrome property
 							<monochrome>true</monochrome>
-							<!-- The tags to run, maps to CucumberOptions.tags property -->
+							The tags to run, maps to CucumberOptions.tags property
 							<tags></tags>
-							<!-- If set to true, only feature files containing the required tags 
-								shall be generated. -->
+							If set to true, only feature files containing the required tags 
+								shall be generated.
 							<filterFeaturesByTags>false</filterFeaturesByTags>
-							<!-- Generate TestNG runners instead of JUnit ones. -->
+							Generate TestNG runners instead of JUnit ones.
 							<useTestNG>false</useTestNG>
-							<!-- The naming scheme to use for the generated test classes. One 
-								of 'simple' or 'feature-title' -->
+							The naming scheme to use for the generated test classes. One 
+								of 'simple' or 'feature-title'
 							<namingScheme>simple</namingScheme>
-							<!-- One of [SCENARIO, FEATURE]. SCENARIO generates one runner per 
-								scenario. FEATURE generates a runner per feature. -->
+							One of [SCENARIO, FEATURE]. SCENARIO generates one runner per 
+								scenario. FEATURE generates a runner per feature.
 							<parallelScheme>SCENARIO</parallelScheme>
 							<packageName></packageName>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 
 		</plugins>
-		<pluginManagement>
+<!-- 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+				This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself.
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -169,6 +168,6 @@
 					</configuration>
 				</plugin>
 			</plugins>
-		</pluginManagement>
+		</pluginManagement> -->
 	</build>
 </project>
